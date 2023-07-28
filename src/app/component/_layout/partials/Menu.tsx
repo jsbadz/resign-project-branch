@@ -29,7 +29,7 @@ export const Menu = () => {
       {
          title: "Breeder",
          url: "/breeder",
-      },
+      },  
       {
          title: "Blog",
          url: "/blog",
@@ -47,7 +47,7 @@ export const Menu = () => {
                <div className="flex items-center h-[100px] w-full justify-between">
                   <div className="flex items-center">
                      <div className="w-[200px]">
-                        <h1 className="text-[#f04336] font-[900]">LOGO HERE</h1>
+                        <h1 className="text-[#f04336] font-[900]">LOGO HEREEE</h1>
                      </div>
                      <div className="flex items-center">
                         <ul className="flex gap-3">
