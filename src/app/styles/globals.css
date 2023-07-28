@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../../public/fonts/poppins-v20-latin-regular.woff2') format('woff2'); 
+}
+
+/* nunito-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../../public/fonts/nunito-v25-latin-regular.woff2') format('woff2'); 
+}
+/* nunito-500 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../../public/fonts/nunito-v25-latin-500.woff2') format('woff2'); 
+}
+/* nunito-700 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../../public/fonts/nunito-v25-latin-700.woff2') format('woff2'); 
+}
+/* nunito-900 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../../../public/fonts/nunito-v25-latin-900.woff2') format('woff2'); 
+}
+
+
+.test {
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+.custom-rounded {
+  border-radius: 10px 10px 20px 20px; 
+}
+
+.img-header {
+  background-image: url('/img/header_shape.png');
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
