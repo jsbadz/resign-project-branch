@@ -65,7 +65,7 @@ export const Menu = () => {
                      </div>
                   </div>
                   <div className="">
-                     <h1 className="bg-[#f04336] p-2 rounded-lg text-white">ADOPT HERE TESTs</h1>
+                     <h1 className="bg-[#f04336] p-2 rounded-lg text-white">ADOPT HERE TEST</h1>
                   </div>
                </div>
             </div>
