@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+
+.test {
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
