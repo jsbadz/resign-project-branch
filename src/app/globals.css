@@ -26,6 +26,15 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
+
 .test {
   -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+.custom-rounded {
+  border-radius: 10px 10px 20px 20px; 
+}
+
+.img-header {
+  background-image: url('/img/header_shape.png');
+  background-size: cover;
 }
