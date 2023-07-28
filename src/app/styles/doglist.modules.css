@@ -1,0 +1,27 @@
+.adoption-bg {
+  background-image: url('/img/adoption_shop_bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.section-icon {
+  animation: 1.5s shake infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+ 
+}
