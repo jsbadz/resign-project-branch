@@ -1,13 +1,17 @@
 "use client"
 
 
-import React from 'react'
+import React, { useState } from 'react'
 import { usePathname } from '../../../node_modules/next/navigation'
 import Link from '../../../node_modules/next/link'
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BsSearch } from "react-icons/bs";
 
 export const Menu = () => {
 
    const pathname = usePathname()
+
+   const [showCart, setShowCart] = useState(false);
 
    const menuItems = [
       {
@@ -29,7 +33,7 @@ export const Menu = () => {
       {
          title: "Breeder",
          url: "/breeder",
-      },  
+      },
       {
          title: "Blog",
          url: "/blog",
@@ -53,9 +57,9 @@ export const Menu = () => {
                         <ul className="flex gap-3">
                            {menuItems.map((item, index) => (
                               <li key={index}>
-                                 <Link 
+                                 <Link
                                     href={item.url}
-                                    className={`cursor-pointer ${pathname === item.url ? "bg-[#f04336] text-white test px-5 py-2 font-[700]" : "text-[#1e4b57] hover:test hover:text-white hover:bg-[#f04336] font-[700] w-[200px] p-5"}`}
+                                    className={`cursor-pointer ${pathname === item.url ? "bg-[#f04336] text-white test px-5 py-2 font-[700] custom-rounded" : "text-[#1e4b57] hover:test hover:text-white hover:bg-[#f04336] font-[700] w-[200px] custom-rounded px-5 py-2"}`}
                                  >
                                     {item.title}
                                  </Link>
@@ -64,11 +68,14 @@ export const Menu = () => {
                         </ul>
                      </div>
                   </div>
-                  <div className="">
-                     <h1 className="bg-[#f04336] p-2 rounded-lg text-white">ADOPT HERE TEST</h1>
+                  <div className="flex items-center gap-5">
+                     <BsSearch size={24} />
+                     <AiOutlineShoppingCart size={26}  />
+                     <h1 className="bg-[#f04336] p-2 rounded-lg text-white">ADOPT HERE TESTs</h1>
                   </div>
                </div>
             </div>
+            <div className="img-header left-0 w-full h-16 bg-repeat bg-center absolute bottom-[-20px] -z-20"></div>
          </div>
       </>
    )
