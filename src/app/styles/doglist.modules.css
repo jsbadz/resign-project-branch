@@ -4,14 +4,6 @@
   background-position: center;
 }
 
-.container {
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .section-icon {
   animation: 1.5s shake infinite;
 }
