@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { usePathname } from "../../../node_modules/next/navigation";
 // import Link from "../../../node_modules/next/link";
 import Cart from '../component/Cart/Cart';
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 
 import Menus from "../component/Menu/Menu";
@@ -16,6 +16,26 @@ export const Menu = () => {
    const pathname = usePathname();
 
    const [showCart, setShowCart] = useState(false);
+   const [openSearch, setOpenSearch] = useState(false);
+   const cartRef = useRef<HTMLDivElement>(null);
+
+   const handleCloseSearch = () => {
+      setOpenSearch(false);      
+   };
+
+   useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
+         setShowCart(false);
+        }
+      };
+  
+      document.addEventListener("mousedown", handleClickOutside);
+  
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, []);
 
    const menuItems: MenuItemProps[] = [
       {
@@ -202,18 +222,22 @@ export const Menu = () => {
                      <div className="flex items-center">
                         <Menus
                            wrapperClassName={`cursor-pointer flex`}
-                           menuClassName={`nav-link text-[#1e4b57] active hover:text-white hover:bg-[#f04336] font-[700] custom-rounded px-5 py-2`}
+                           menuClassName={`nav-link text-[#1e4b57] active hover:text-white hover:bg-[#f04336] font-[700] custom-rounded px-5 py-2 transition ease-out duration-500`}
                            items={menuItems}
                         />
                      </div>
                   </div>
                   <div className="flex items-center gap-5">
-                     <BsSearch size={24} />
+                     <BsSearch
+                        size={24}
+                        onClick={() => setOpenSearch(!openSearch)}
+                        className="cursor-pointer"
+                     />
                      <Cart className=" relative" count={7} onClick={() => setShowCart(!showCart)} />
                      <h1 className="bg-[#f04336] p-2 rounded-lg text-white">ADOPT HERE TESTs</h1>
                   </div>
                   {showCart ? (
-                     <div className={(showCart ? "right-0" : "right-0") + " bg-white top-[5rem] w-full px-5 sm:w-[380px] border-2 border-black min-h-[400px] transition-right shadow-xl pb-5 z-40 absolute"}>
+                     <div ref={cartRef} className={(showCart ? "right-[3%]" : "right-0") + " bg-white top-[5rem] w-full px-5 sm:w-[380px] border-2 border-black min-h-[400px] transition-right shadow-xl pb-5 z-40 absolute"}>
                         {cartData && cartData.length ? (
                            <div className="flex flex-col py-5 custom-scroll">
                               <div className='overflow-y-auto h-[230px]'>
@@ -278,12 +302,40 @@ export const Menu = () => {
                            Shopping Cart
                         </button>
                         <button className="bg-[#0a303a] text-white p-5 w-full uppercase text-sm mt-2">
-                            Checkout
+                           Checkout
                         </button>
                      </div>
                   ) : null}
                </div>
             </div>
+            {openSearch ? (
+               <div className="flex absolute w-full max-w-[1024] h-screen top-0 justify-center border-2 border-red-700">
+                  <div className="flex flex-col items-center justify-center bg-white  w-full ">
+                     <div className="flex  w-full justify-end absolute top-0 p-10">
+                        <AiOutlineClose
+                           size={24}
+                           className="text-[#f04336] cursor-pointer font-900"
+                           onClick={handleCloseSearch}
+                        />
+                     </div>
+                     <div className="flex flex-col justify-center items-center w-full">
+                        <h6 className="text-5xl font-[600] text-[#0a303a] pb-[50px]">
+                           ...Search Here...
+                        </h6>
+                        <div className="pt-2 relative mx-auto text-gray-600">
+                           <input
+                              className="border-2 text-center border-[#f04336] bg-white h-[53px] px-5 pr-16 text-3xl focus:outline-none w-[1280px] border-t-0 border-l-0 border-r-0"
+                              type="search"
+                              name="search"
+                           />
+                           <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
+                              <BsSearch size={24} className="text-[#f04336]" />
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            ) : null}
             <div className="img-header left-0 w-full h-16 bg-repeat bg-center absolute bottom-[-20px] -z-20"></div>
          </div>
       </>

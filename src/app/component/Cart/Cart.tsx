@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineShoppingCart } from "react-icons/ai";
-const Cart = (props) => {
-   const { count, className, onClick } = props
+const Cart = (props: { count: any; className: any; onClick: any; }) => {
+   const { count, onClick } = props
    return (
       <>
          <div
