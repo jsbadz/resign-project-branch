@@ -94,6 +94,17 @@ body {
   margin-left: auto;
 }
 
+.custom-scroll ::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scroll ::-webkit-scrollbar-thumb {
+  background: #f04336;
+  border-radius: 100vh;
+}
+
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1230px;

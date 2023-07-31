@@ -6,6 +6,7 @@ import { usePathname } from "../../../node_modules/next/navigation";
 import Cart from '../component/Cart/Cart';
 import { AiOutlineClose, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
+import { GrFormClose } from "react-icons/gr";
 
 import Menus from "../component/Menu/Menu";
 import { MenuItemProps, MenuProps } from "../interfaces";
@@ -19,23 +20,24 @@ export const Menu = () => {
    const [openSearch, setOpenSearch] = useState(false);
    const cartRef = useRef<HTMLDivElement>(null);
 
-   const handleCloseSearch = () => {
-      setOpenSearch(false);      
+   const handlerCloseSearch = () => {
+      setOpenSearch(false);
+      setShowCart(false);
    };
 
    useEffect(() => {
-      const handleClickOutside = (event: MouseEvent) => {
-        if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
-         setShowCart(false);
-        }
+      const handlerClickOutside = (event: MouseEvent) => {
+         if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
+            setShowCart(false);
+         }
       };
-  
-      document.addEventListener("mousedown", handleClickOutside);
-  
+
+      document.addEventListener("mousedown", handlerClickOutside);
+
       return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
+         document.removeEventListener("mousedown", handlerClickOutside);
       };
-    }, []);
+   }, []);
 
    const menuItems: MenuItemProps[] = [
       {
@@ -237,9 +239,19 @@ export const Menu = () => {
                      <h1 className="bg-[#f04336] p-2 rounded-lg text-white">ADOPT HERE TESTs</h1>
                   </div>
                   {showCart ? (
-                     <div ref={cartRef} className={(showCart ? "right-[3%]" : "right-0") + " bg-white top-[5rem] w-full px-5 sm:w-[380px] border-2 border-black min-h-[400px] transition-right shadow-xl pb-5 z-40 absolute"}>
+                     <div ref={cartRef} className={`${showCart ? "right-[3%]" : "right-0"} bg-white top-[5rem] w-full px-5 sm:w-[380px] rounded-md border-2 border-black min-h-[400px] transition-right shadow-xl pb-5 z-40 absolute`}>
                         {cartData && cartData.length ? (
                            <div className="flex flex-col py-5 custom-scroll">
+                              <div className="flex justify-between pb-3">
+                                 <h6 className="text-md font-600">
+                                    Cart
+                                 </h6>
+                                 <GrFormClose
+                                    size={24}
+                                    className="text-[#f04336] cursor-pointer font-900"
+                                    onClick={handlerCloseSearch}
+                                 />
+                              </div>
                               <div className='overflow-y-auto h-[230px]'>
                                  {cartData.map((items, i) => (
                                     <div
@@ -308,34 +320,34 @@ export const Menu = () => {
                   ) : null}
                </div>
             </div>
-            {/* {openSearch ? ( */}
-               <div className={`flex absolute w-full top-0 justify-center border-2 border-red-700 transition-all duration-300 overflow-hidden ${openSearch ? 'h-[900px]' : 'h-[0]'}`}>
-                  <div className="flex flex-col items-center justify-center bg-white  w-full ">
-                     <div className="flex  w-full justify-end absolute top-0 p-10">
-                        <AiOutlineClose
-                           size={24}
-                           className="text-[#f04336] cursor-pointer font-900"
-                           onClick={handleCloseSearch}
+
+            {/* OPEN SEARCH */}
+            <div className={`flex absolute w-full top-0 justify-center transition-all duration-300 overflow-hidden ${openSearch ? 'h-[900px]' : 'h-[0]'}`}>
+               <div className="flex flex-col items-center justify-center bg-white  w-full ">
+                  <div className="flex  w-full justify-end absolute top-0 p-10">
+                     <GrFormClose
+                        size={24}
+                        className="text-[#f04336] cursor-pointer font-900"
+                        onClick={handlerCloseSearch}
+                     />
+                  </div>
+                  <div className="flex flex-col justify-center items-center w-full">
+                     <h6 className="text-5xl font-[600] text-[#0a303a] pb-[50px]">
+                        ...Search Here...
+                     </h6>
+                     <div className="pt-2 relative mx-auto text-gray-600">
+                        <input
+                           className="border-2 text-center border-[#f04336] bg-white h-[53px] px-5 pr-16 text-3xl focus:outline-none w-[1280px] border-t-0 border-l-0 border-r-0"
+                           type="search"
+                           name="search"
                         />
-                     </div>
-                     <div className="flex flex-col justify-center items-center w-full">
-                        <h6 className="text-5xl font-[600] text-[#0a303a] pb-[50px]">
-                           ...Search Here...
-                        </h6>
-                        <div className="pt-2 relative mx-auto text-gray-600">
-                           <input
-                              className="border-2 text-center border-[#f04336] bg-white h-[53px] px-5 pr-16 text-3xl focus:outline-none w-[1280px] border-t-0 border-l-0 border-r-0"
-                              type="search"
-                              name="search"
-                           />
-                           <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
-                              <BsSearch size={24} className="text-[#f04336]" />
-                           </button>
-                        </div>
+                        <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
+                           <BsSearch size={24} className="text-[#f04336]" />
+                        </button>
                      </div>
                   </div>
                </div>
-            {/* ) : null } */}
+            </div>
             <div className="img-header left-0 w-full h-16 bg-repeat bg-center absolute bottom-[-20px] -z-20"></div>
          </div>
       </>
