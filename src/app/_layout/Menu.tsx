@@ -308,8 +308,8 @@ export const Menu = () => {
                   ) : null}
                </div>
             </div>
-            {openSearch ? (
-               <div className="flex absolute w-full max-w-[1024] h-screen top-0 justify-center border-2 border-red-700">
+            {/* {openSearch ? ( */}
+               <div className={`flex absolute w-full top-0 justify-center border-2 border-red-700 transition-all duration-300 overflow-hidden ${openSearch ? 'h-[900px]' : 'h-[0]'}`}>
                   <div className="flex flex-col items-center justify-center bg-white  w-full ">
                      <div className="flex  w-full justify-end absolute top-0 p-10">
                         <AiOutlineClose
@@ -335,7 +335,7 @@ export const Menu = () => {
                      </div>
                   </div>
                </div>
-            ) : null}
+            {/* ) : null } */}
             <div className="img-header left-0 w-full h-16 bg-repeat bg-center absolute bottom-[-20px] -z-20"></div>
          </div>
       </>
