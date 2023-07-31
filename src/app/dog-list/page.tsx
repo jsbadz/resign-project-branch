@@ -2,6 +2,9 @@ import '../styles/doglist.modules.css'
 import Image from '../../../node_modules/next/image'
 import PawPrint from '../../../public/img/pawprint.png'
 import h_PawPring from '../../../public/img/w_pawprint.png'
+import { FaCog } from 'react-icons/fa'
+import { BiCalendar } from 'react-icons/bi'
+import Link from 'next/link'
 
 
 
@@ -55,9 +58,26 @@ export default function DogList() {
               </div>
             </div>
             <div className='relative z-[1] rounded-[10px] bg-white mt-[-48px] mx-[24px] px-[25px] pt-[25px] pb-[30px] shadow-sm'>
-              <h4 className='text-center text-[22px] text-[#f04336] mb-[17px] font-nunito font-black hover:text-[#0a303a]'>Mister Tartosh</h4>
+              <h4 className='text-center text-[22px] text-[#f04336] mb-[17px] font-nunito font-black hover:text-[#0a303a]'>
+                <Link
+                  href={''}
+                >
+                  Mister Tartosh
+                </Link>
+              </h4>
               <ul className='flex justify-between items-center pb-[15px] border-[#e1e1e1] border-b-[1px] mb-[15px]'>
-                <li></li>
+                <li>
+                  <FaCog size={13} className='mr-[6px]'></FaCog>
+                  <Link
+                    href={''}
+                    className="hover:text-[#f04336]"
+                  >
+                    Siberian Husky
+                  </Link>
+                </li>
+                <li>
+                  <BiCalendar size={13} className='mr-[6px]'></BiCalendar>
+                </li>
               </ul>
             </div>
           </div>
