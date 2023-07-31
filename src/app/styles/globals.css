@@ -68,8 +68,13 @@ body {
   src: url('../../../public/fonts/nunito-v25-latin-900.woff2') format('woff2'); 
 }
 
+body {
+  font-family: "Poppins" sans-serif;
+  font-size: 16px;
+  color: #676666;
+}
 
-.test {
+.polygon {
   -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 }
 .custom-rounded {
@@ -82,9 +87,33 @@ body {
 }
 
 .container {
-  width: 100%;
+  width: 100%; 
   padding-left: 15px;
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1230px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
 }
