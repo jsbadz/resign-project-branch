@@ -29,7 +29,8 @@ export default function DogList() {
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center'>
-          <div className='mb-[50px] group'>
+          {/* Outer group */}
+          <div className='mb-[50px] group/outer'>
             <div className='relative'>
               <div className='absolute left-0 top-0 w-full h-full rounded bg-[#f4f1ea] opacity-0 ease-linear duration-300 group-hover:opacity-[.57]'></div>
               <Image 
@@ -40,17 +41,24 @@ export default function DogList() {
                 height={1000}
                 quality={100}
               />
+              {/* Inner group */}
               <div className='absolute left-1/2 top-[40%] opacity-0 transform -translate-x-1/2 -translate-y-1/2 z-[2] duration-300 ease-in-out bg-[#f04336] 
               rounded-[3px] text-[20px] text-white font-extrabold font-nunito inline-flex items-center py-[17px] px-[25px] text-center whitespace-nowrap cursor-pointer
-              overflow-hidden group-hover:opacity-[1] group-hover:top-1/2 group'>
+              overflow-hidden group-hover/outer:opacity-[1] group-hover/outer:top-1/2 group/inner'>
                 Adoption
                 <Image 
                   src={h_PawPring}
                   alt={'/'}
                   className='max-w-[20px] ml-[10px]'
                 />
-                <div className='absolute duration-[800] w-[200%] h-[200%] top-[110%] left-[50%] bg-[#0a303a] transform translate-x-1/2 rounded-[50%] z-[-1] group-hover:top-[-40%]'></div>
+                <div className='absolute duration-700 w-[200%] h-[200%] left-[50%] top-[110%] bg-[#0a303a] transform -translate-x-1/2 rounded-[50%] z-[-1] group-hover/inner:top-[-40%]'></div>
               </div>
+            </div>
+            <div className='relative z-[1] rounded-[10px] bg-white mt-[-48px] mx-[24px] px-[25px] pt-[25px] pb-[30px] shadow-sm'>
+              <h4 className='text-center text-[22px] text-[#f04336] mb-[17px] font-nunito font-black hover:text-[#0a303a]'>Mister Tartosh</h4>
+              <ul className='flex justify-between items-center pb-[15px] border-[#e1e1e1] border-b-[1px] mb-[15px]'>
+                <li></li>
+              </ul>
             </div>
           </div>
         </div>
