@@ -202,7 +202,7 @@ export const Menu = () => {
                      <div className="flex items-center">
                         <Menus
                            wrapperClassName={`cursor-pointer flex`}
-                           menuClassName={`nav-link text-[#1e4b57] active hover:text-white hover:bg-[#f04336] font-[700] custom-rounded px-5 py-2`}
+                           menuClassName={`polygon text-[#1e4b57] hover:text-white hover:bg-[#f04336] font-[700] custom-rounded px-5 py-2`}
                            items={menuItems}
                         />
                      </div>
