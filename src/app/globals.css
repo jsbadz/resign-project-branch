@@ -45,12 +45,12 @@ body {
 }
 
 /* SCROLL BAR CSS */
- ::-webkit-scrollbar {
+.custom-scroll ::-webkit-scrollbar {
   width: 5px;
   height: 10px;
 }
 
- ::-webkit-scrollbar-thumb {
+.custom-scroll ::-webkit-scrollbar-thumb {
   background: #f04336;
   border-radius: 100vh;
 }
