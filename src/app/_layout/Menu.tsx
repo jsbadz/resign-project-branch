@@ -32,7 +32,7 @@ export const Menu = () => {
          }
       };
 
-      document.addEventListener("mousedown", handlerClickOutside);
+         document.addEventListener("mousedown", handlerClickOutside);
 
       return () => {
          document.removeEventListener("mousedown", handlerClickOutside);
