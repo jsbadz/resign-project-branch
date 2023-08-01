@@ -38,3 +38,10 @@ body {
   background-image: url('/img/header_shape.png');
   background-size: cover;
 }
+
+.custom-rounded1 {
+  padding: 10px 40px 10px 10px;
+  border-radius: 15px 20px 40px 15px;
+  line-height: 1.1;
+  clip-path: polygon(0 0, 100% 0, 91% 100%, 0% 100%);
+}
