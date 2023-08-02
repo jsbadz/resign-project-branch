@@ -6,6 +6,8 @@ import { Button } from '../component';
 import Image from 'next/image';
 import { AiOutlineUnorderedList } from 'react-icons/ai';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
+// import { Router } from 'next/router';
 
 const shop = () => {
 
@@ -52,54 +54,63 @@ const shop = () => {
 
    const shopData = [
       {
+         id: 1,
          image: "/img/shop_item04.jpg",
          category: "Dog Toy's",
          name: "Pet Knit Knacks",
          price: 190,
       },
       {
+         id: 2,
          image: "/img/shop_item05.jpg",
          category: "Dog Toy's",
          name: "Squeaky Dog",
          price: 190,
       },
       {
+         id: 3,
          image: "/img/shop_item06.jpg",
          category: "Dog Toy's",
          name: "Pet Knit Knacks",
          price: 190,
       },
       {
+         id: 4,
          image: "/img/shop_item01.jpg",
          category: "Dog Toy's",
          name: "Yoda Carriage",
          price: 190,
       },
       {
+         id: 5,
          image: "/img/shop_item02.jpg",
          category: "Dog Toy's",
          name: "Pet Carriage",
          price: 190,
       },
       {
+         id: 6,
          image: "/img/shop_item03.jpg",
          category: "Dog Toy's",
          name: "Squeaky Dog",
          price: 190,
       },
       {
+         id: 7,
          image: "/img/shop_item07.jpg",
          category: "Dog Toy's",
          name: "Carriage Dog",
          price: 190,
       },
       {
+         id: 8,
          image: "/img/shop_item08.jpg",
          category: "Dog Toy's",
          name: "Yoda Carriage",
          price: 190,
       },
       {
+         id: 9,
          image: "/img/shop_item09.jpg",
          category: "Dog Toy's",
          name: "Pet Knit Knacks",
@@ -305,7 +316,8 @@ const shop = () => {
                                           <span className="text-[#282828] font-[700] text-sm">
                                              $ {item.price}.00
                                           </span>
-                                          <Link href="#"
+                                          <Link 
+                                             href={`/shop/${item.id}`}
                                              className="text-[#f04336] font-[700] text-sm"
                                           >
                                              ADD +
