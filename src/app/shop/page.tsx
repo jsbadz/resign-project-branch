@@ -124,25 +124,23 @@ const shop = () => {
             <div className="container max-w-[540px] md:max-w-[960px] lg:max-w-[1230px]">
                <div className="flex flex-row w-full max-h-full gap-5">
                   <div className="flex flex-col w-1/4 px-3">
-                     <div className="mb-3">
-                        <div className="relative mb-4 flex w-full flex-wrap items-stretch">
-                           <input
-                              type="search"
-                              className="relative bg-[#f5f2eb] m-0 -mr-0.5 block w-[1px] h-[60px] min-w-0 flex-auto rounded-l border-[#1e4b57] text-black px-3 py-[0.25rem] text-base outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-[#f04336] focus:outline-none "
-                              placeholder="Search"
-                              aria-label="Search"
-                              aria-describedby="button-addon1"
-                           />
-                           <button
-                              className="relative z-[2] flex items-center rounded-r bg-[#f04336] px-6 py-2.5 text-white shadow-md transition duration-150 ease-in-out "
-                              type="button"
-                              id="button-addon1"
-                              data-te-ripple-init
-                              data-te-ripple-color="light">
+                     <div className="relative mb-4 flex w-full flex-wrap">
+                        <input
+                           type="search"
+                           className="relative bg-[#f5f2eb] m-0 -mr-0.5 block w-[1px] h-[60px] min-w-0 flex-auto rounded-l border-[#1e4b57] text-black px-3 py-[0.25rem] text-base outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-[#f04336] focus:outline-none "
+                           placeholder="Search"
+                           aria-label="Search"
+                           aria-describedby="button-addon1"
+                        />
+                        <button
+                           className="relative z-[2] flex items-center rounded-r bg-[#f04336] px-6 py-2.5 text-white shadow-md transition duration-150 ease-in-out "
+                           type="button"
+                           id="button-addon1"
+                           data-te-ripple-init
+                           data-te-ripple-color="light">
 
-                              <IoMdSearch size={24} />
-                           </button>
-                        </div>
+                           <IoMdSearch size={24} />
+                        </button>
                      </div>
                      <div className="flex flex-col pb-7">
                         <h6 className="font-[700] text-xl text-[#1e4b57] pb-5">
@@ -316,7 +314,7 @@ const shop = () => {
                                           <span className="text-[#282828] font-[700] text-sm">
                                              $ {item.price}.00
                                           </span>
-                                          <Link 
+                                          <Link
                                              href={`/shop/${item.id}`}
                                              className="text-[#f04336] font-[700] text-sm"
                                           >
