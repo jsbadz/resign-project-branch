@@ -21,6 +21,9 @@ module.exports = {
       boxShadow: {
         'sm': '0px 9px 34.3px 0.7px rgba(0, 0, 0, 0.05)',
       },
+      transitionProperty: {
+        'height': 'height'
+      }
     },
   },
   plugins: [],

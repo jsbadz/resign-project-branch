@@ -4,8 +4,64 @@
   background-position: center;
 }
 
+.faq-question-bg {
+  background-image: url('/img/testi_bg_shape01.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.faq-question-bg2 {
+  background-image: url('/img/testi_bg_shape02.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.breed-service-bg {
+  background-image: url('/img/breed_services_bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.breed-rectangle {
+  background-image: url('/svg/Rectangle.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.breed-arrow {
+  transform: rotateY(180deg) translateY(-50%);
+  background-image: url('/img/arrow_bg.png') !important;
+  background-position: right !important;
+  background-repeat: no-repeat !important;
+}
+
+.news-letter-bg {
+  background-image: url('/img/newsletter_bg.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.news-letter-polygon {
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 0% 100%);
+}
+
+/* YourComponent.css */
+.hover-color-change {
+  transition: color 0.3s; /* Adding a smooth transition */
+}
+
+.hover-color-change:hover {
+  color: red; /* Change this to your desired hover color */
+}
+
 .section-icon {
   animation: 1.5s shake infinite;
+}
+
+.btn-polygon {
+  border-radius: 47% 53% 61% 39% / 38% 38% 62% 62%;
 }
 
 @keyframes shake {
